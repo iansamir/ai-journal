@@ -1,7 +1,8 @@
 # ai-journal
 Tool for a command line journal with GPT and bash compilation tools, Python for PDFs etc.
 
-Need to configure Pinecone API and OpenAI API key into .env file. Then, edit names of index and your Pinecone region in files.
+Need to configure Pinecone API and OpenAI API key into .env file. Then, edit names of index and your Pinecone region in embeddings/create_embeddings.py and journal_bot.py.
+
 Can start by moving text files into /journals, and then 
 ```
 cd embeddings
