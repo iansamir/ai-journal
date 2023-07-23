@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-def workout_chat(prompt, messages):
+def journal_chat(prompt, messages):
     
     conversation = []
     
@@ -74,4 +74,4 @@ if __name__ == "__main__":
             print('\n\nGLOW: Goodbye! \n')
             break
         else:
-            conversation = workout_chat(prompt, conversation)
+            conversation = journal_chat(prompt, conversation)
