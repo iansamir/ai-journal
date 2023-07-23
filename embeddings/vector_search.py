@@ -7,18 +7,22 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def connect_pinecone(index_name):
+    print()
+    
     # Set up OpenAI
     openai.api_key = os.getenv("OPENAI_API_KEY")
     
     # Set up Pinecone
     pinecone_api_key = os.getenv("PINECONE_API_KEY")
-    pinecone_env = ''
+    pinecone_env = 'us-east4-gcp'
     pinecone.init(api_key=pinecone_api_key, environment=pinecone_env)
 
     # Connect to the Pinecone index
     return pinecone.Index(index_name)
 
 def pinecone_search(index, query, namespace, top_k=3):
+    print("index", index)
+    
     # Create the query embedding
     xq = openai.Embedding.create(input=query, engine='text-embedding-ada-002')['data'][0]['embedding']
     

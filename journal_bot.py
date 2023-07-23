@@ -25,8 +25,8 @@ def journal_chat(prompt, messages):
     print('\n')
 
     # Get context from vector searching journal knowledge
-    index = connect_pinecone("journals")
-    namespace = "journal-data"
+    index = connect_pinecone("workout-names")
+    namespace = "journals"
     query = prompt
     matches = pinecone_search(index, query, namespace) 
     

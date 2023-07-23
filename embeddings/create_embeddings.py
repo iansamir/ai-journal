@@ -93,7 +93,7 @@ import glob
 
 if __name__ == "__main__":
     # Connect to a pinecone vector index      
-    index_name = ""
+    index_name = "workout-names"
     
     # Create a new pinecone index
     # index = create_pinecone_index(index_name, embeds)
@@ -102,10 +102,10 @@ if __name__ == "__main__":
     index = connect_pinecone(index_name)
     
     # Connect to namespace (subsection of the index)
-    namespace = ""
+    namespace = "journals"
     
     # Get a list of all files in the "journals" folder
-    file_list = glob.glob("journals/*.txt")
+    file_list = glob.glob("../journals/*.txt")
 
     for filename in file_list:
         chunks, embeds = create_embeddings(filename)
