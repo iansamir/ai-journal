@@ -1,5 +1,4 @@
-from vector_search import connect_pinecone, pinecone_search 
-from color_print import cyan_print
+from embeddings.vector_search import connect_pinecone, pinecone_search 
 
 import openai, os
 from dotenv import load_dotenv
@@ -50,8 +49,7 @@ def journal_chat(prompt, messages):
 
     # Print reply and question
     print(6*"\n")
-    print('PROMPT:')
-    cyan_print(prompt)
+    print('PROMPT:', prompt)
     print("\n")
     print('ASSISTANT:', completion)
     print(2*'\n')
